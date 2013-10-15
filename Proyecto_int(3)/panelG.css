@@ -1,0 +1,92 @@
+#titulo
+{
+   background:#993311;
+}
+body
+{
+   color:white;
+   font-size: 25px;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   background:#00CED1;
+   background-image:url(img/madera.jpg);
+}
+h3
+{
+	font-size: 1.2em;
+}
+nav li ul {
+   width: 200px;
+   margin:0;
+   display:none;
+   background:gray;
+   border:1px #ccc solid;
+   position: absolute;
+   right: 300px;
+   top:-1px;
+   text-align:left;
+   border-radius: 20%;
+   color:red;
+   cursor: pointer;
+}
+.button
+{
+   margin-left:260px;
+   width:150px;
+   height:50px;
+   font-size:30px;
+   right:5px;
+   background:#FF3344;
+
+   cursor: pointer;
+}
+
+nav{
+   width:250px;
+   text-align: center ;
+   margin:0px ;
+
+   position: absolute;
+	right:5px;
+   height:0%;
+   top:100px;
+     color:white;
+   border-radius: 20%;
+     cursor: pointer;
+
+}
+nav ul li{
+/* submenu*/
+   left:-10px;
+   height:55px;
+   width:300px;
+   border-radius: 20%;
+   color:white;
+
+   cursor: pointer;
+}
+nav li:hover ul {
+   display: block;
+   border-radius: 20%;
+}
+nav li:hover{
+   font-size: 45px;
+}
+nav li{
+   list-style: none;
+   position:relative; /* submenu*/
+   left:-10px;
+   color:white;
+   height:55px;
+   border-radius: 20%;
+        cursor: pointer;
+}
+nav li.parent:hover{
+   font-size: 30px;
+   font-family: "comic", Helvetica, Arial, sans-serif;
+   border:1px #000 solid;
+   margin:-1px;
+   background:#ccc;
+   background-image:url(img/metallic1.png);
+   border-radius: 20%;
+   color:black;
+}

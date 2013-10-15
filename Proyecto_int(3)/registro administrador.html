@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html >
+ <header>
+ <link href="stylo.css" type="text/css" rel="stylesheet">
+
+       <script language="JavaScript" type="text/JavaScript">
+
+      function verif(form1)
+      {     
+       var no = document.getElementById("nom").value;
+       var em = document.getElementById("e-m").value;
+       var fb = document.getElementById("fb").value;
+       var tw = document.getElementById("tw").value;
+       var us = document.getElementById("usu").value;
+       var p1 = document.getElementById("pass1").value;
+       var p2 = document.getElementById("pass2").value;
+
+       if (p1.length == 0 || p2.length == 0||
+no.length==0||em.length==0||fb.length==0||us.length==0|| tw.length==0) 
+        {
+         alert("quedan campos vacios");
+         return false;
+        }       
+        else
+        {
+        if (form1.password1.value!=form1.password2.value) 
+        { alert('las contraseñas son diferentes'); return false }
+        }
+       }
+
+      function X(F)
+      {
+        if (F.password1.value==F.password2.value) 
+        {  return true }
+        else 
+        { alert('Las contraseñas no coinciden'); return false }
+      }
+
+      </script>
+
+ <meta charset="UTF-8" />
+ <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+ <title>Registro</title></head>
+</header>
+
+ <body>
+ <form  name="formu" align="center">
+    
+    <div class="div2">
+    <center>
+       <table>
+             <h2>Registro de Administrador</h2>
+        
+           <tr>
+            <td><label for="nombre">Nombre:</label></td>
+            <td><input id="nom" type="text" name="nombre" class="text_box" placeholder="Nombre/s" required /><br></td>
+           </tr>
+
+           <tr>
+            <td><label for="usuario">Usuario:</label></td>
+            <td><input id="usu" type="text" name="usuario" class="text_box" placeholder="Usuario" required /><br></td>
+           </tr>
+
+           <tr>
+            <td><label for="Contraseña">Contraseña:</label></td>
+            <td><input id="pass1" type="password" name="password1" class="text_box"  placeholder="Contraseña"  required /><br></td>
+           </tr>
+
+           <tr>
+            <td><label for="contraseñados">Confirmar Contraseña:</label></td>
+            <td><input id="pass2" type="password" name="password2" class="text_box" placeholder="Contraseña"                      onblur="return(X(this.form)); MM_validateForm()" required /><br></td>
+           </tr>
+
+           <tr>
+            <td><label for="e-mail">e-mail:</label></td>
+            <td><input id="e-m" type="text" name="e-mail" pattern="^([a-zA-Z0-9._]+)@([a-zA-Z0-9.-]+).([a-zA-Z]{2,4})$" class="text_box" placeholder="e-mail" required /><br></td>
+           </tr>
+
+           <tr>       
+            <td><label for="facebook">Facebook:</label></td>
+            <td><input id="fb" type="text" name="face" class="text_box" placeholder="Facebook" /><br></td>
+           </tr>
+           
+           <tr>
+            <td><label for="twitter">Tweeter:</label></td>
+            <td><input id="tw" type="text" name="twitter" class="text_box" placeholder="Twitter"  /><br></td>
+           </tr>
+            
+           <tr>
+            <td><label for="Foto">Foto:</label><br>
+            <td><input type="file" id="files" name="files[]"></td>
+           </tr>
+</table>
+
+            <output id="list"><img src="img/facebook-default-no-profile-pic.jpg" width=150px 
+height=170px></output><br>
+
+       <script>
+              function archivo(evt) {
+                  var files = evt.target.files;
+             
+                  for (var i = 0, f; f = files[i]; i++) {
+
+                    if (!f.type.match('image.*')) {
+                        continue;
+                    }
+             
+                    var reader = new FileReader();
+             
+                    reader.onload = (function(theFile) {
+                        return function(e) {
+
+                         document.getElementById("list").innerHTML = ['<img class="thumb" src="', 
+
+e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+                        };
+                    })(f);
+             
+                    reader.readAsDataURL(f);
+                  }
+              }
+             
+              document.getElementById('files').addEventListener('change', archivo, false);
+      </script>
+          <br>
+           <input class="button" type="submit" onclick="return(X(this.form)); 
+MM_validateForm()"></input></td>
+            <td><a href='panel.html'><button class="button" type="button">Cancelar</button></a>
+
+  </div>
+ </form>
+ </body>
+</html>

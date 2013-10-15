@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<header>
+<STYLE type="text/css">
+a:link {text-decoration:none;color:white;}
+a:visited {text-decoration:none;color:white;}
+a:active {text-decoration:none;color:white;}
+a:hover {text-decoration:none;color:white;}
+</STYLE> 
+
+<script>
+function ver(Men) {
+   var elElemento=document.getElementById(Men);
+   if(elElemento.style.display == 'block') {
+      elElemento.style.display = 'none';
+   } else {
+      elElemento.style.display = 'block';
+   }
+}
+</script>
+
+<body>
+<div id="titulo">
+
+<h3 align="right"><label for="nombre" class="ttl">Panel General</label>
+<input id="btn" type="button" class="button" value="MENU" onClick="ver('menu')"> 
+</h3>
+
+</div>
+
+</header>
+<link rel="stylesheet" type="text/css" href="stylee.css"/>
+<link rel="stylesheet" type="text/css" href="panelG.css" />
+
+<div>
+ <nav id="menu" style="display:none">
+      <li class="parent">Clientes
+      <ul>
+      <li><a href = 'ingresar_clientes.html'>Ingresar</a></li>
+      <li>Cambiar</li>
+      <li>Eliminar</li>
+      <li>Consultar</li>
+      </ul>
+      </li>
+      <li class="parent">Productos</li>
+      <li class="parent">Ventas</li>
+      <hr>
+      <li class="parent">administrador</li>    
+   </nav>
+</div>
+
+
+</body>
+</html>

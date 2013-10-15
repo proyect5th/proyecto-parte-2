@@ -1,0 +1,90 @@
+header
+{
+   
+   color:white;
+
+}
+body{
+   font-size: 25px;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   background:#5654F1;
+   background-image:url(img/verde.jpg);
+}
+nav{
+   width:250px;
+   text-align: center ;
+   margin:0px ;
+
+   position: absolute;
+	right:5px;
+   height:0%;
+   top:230px;
+     color:white;
+   border-radius: 20%;
+     cursor: pointer;
+
+}
+nav li:hover{
+   font-size: 45px;
+}
+nav li{
+   list-style: none;
+   position:relative; /* submenu*/
+   left:-10px;
+   color:white;
+   height:55px;
+   border-radius: 20%;
+        cursor: pointer;
+}
+nav ul li{
+/* submenu*/
+   left:-10px;
+   height:55px;
+   width:300px;
+   border-radius: 20%;
+   color:black;
+   cursor: pointer;
+}
+
+nav li.parent:hover{
+   font-size: 30px;
+   font-family: "comic", Helvetica, Arial, sans-serif;
+   border:1px #ccc solid;
+   margin:-1px;
+   background:#F8F8F8;
+   border-radius: 20%;
+   color:black;
+}
+
+
+/* para el sub menu*/
+nav li ul {
+   width: 200px;
+   margin:0;
+   display:none;
+   background:#F8F8F8;
+   border:1px #ccc solid;
+   position: absolute;
+   right: 300px;
+   top:-1px;
+   text-align:left;
+   border-radius: 20%;
+   color:black;
+   cursor: pointer;
+}
+nav li:hover ul {
+   display: block;
+   border-radius: 20%;
+}
+#btn_menu
+{
+   width:30px;
+   height:380px;
+   position:absolute;
+   right:5px;
+   top:230px;
+   background:green;
+   border-radius: 20%;
+   cursor: pointer;
+   background-image:url(img/cafe.png);
+}

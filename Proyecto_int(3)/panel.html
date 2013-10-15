@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<header>
+     
+<STYLE type="text/css">
+a:link {text-decoration:none;color:black;}
+a:visited {text-decoration:none;color:black;}
+a:active {text-decoration:none;color:black;}
+a:hover {text-decoration:none;color:black;}
+</STYLE> 
+
+<link rel="stylesheet" type="text/css" href="stylee.css"/>
+<link rel="stylesheet" type="text/css" href="panel.css" />
+
+
+<script>
+function a(s,d){
+   var elElemento=document.getElementById(s);
+var elElementoo=document.getElementById(d);
+elElemento.style.display = 'block'
+elElementoo.style.display = 'block'
+}
+</script>
+<script>
+function b(s,d){
+   var elElemento=document.getElementById(s);
+var elElementoo=document.getElementById(d);
+elElemento.style.display = 'none'
+elElementoo.style.display = 'none'
+}
+</script>
+
+
+<script>
+function ver(enu) {
+   var elElemento=document.getElementById(enu);
+   if(elElemento.style.display == 'block') {
+      elElemento.style.display = 'none';
+   } else {
+      elElemento.style.display = 'block';
+   }
+}
+</script>
+</header>
+<body>
+<div>
+<marquee style="color:white; font-size: 70px;" behavior="left" scrolldelay="10" align="midldle" width="100%" height="70">
+PROYECTO INTEGRADOR
+</marquee>
+</div>
+<div>
+ <nav id="menu" style="display:none">
+      <li class="parent">Administrador
+         <ul>
+            <li> <a href = 'altas_adm.html'>Altas</a></li>
+            <li><label  onclick = "a('fond2','mod2')">Bajas</li>
+            <li><label  onclick = "a('fond1','mod1')">Cambios</li>
+         </ul>
+      </li>
+      <li class="parent">Vendedores
+         <ul>
+            <li ><a href = 'altas_vend.html'>Altas</a></li>
+            <li><label  onclick = "a('fond4','mod4')">Bajas</li>
+            <li><label  onclick = "a('fond3','mod3')">Cambios</li>
+         </ul>
+      </li>
+      <li class="parent">Clientes
+         <ul>
+            <li><label  onclick = "a('fond5','mod5')">Consultar</li>
+         </ul>
+      </li>
+      <li class="parent">Productos
+         <ul>
+          
+            <li><label  onclick = "a('fond6','mod6')">Consultar</li>
+         </ul>
+      </li>
+      <li class="parent">Reportes
+         <ul>
+            <li>Diario</li>
+            <li>Semanal</li>
+            <li>Mensual</li>
+            <li>Anual</li>
+         </ul>
+      </li>      
+
+      <li class="parent">Cerrar sesion</label></li>
+      <li class="parent">Salir</label></li>
+
+   </nav>
+</div>
+<div id="fond1" class="fondo"></div>
+<div id="mod1" class="modal">
+ <form>
+      <label class="titulo">Administrador: Cambios </label>
+      <label class="lbl_clave">Ingrese la clave:</label>
+      <input type="text" placeholder="Clave" class="txt" required/> 
+     <input type="submit" value="Buscar" class="btn_buscar" >
+      <input type="button" value="x" onclick = "b('fond1','mod1')" class="x"/>
+      </form>
+</div>
+<div id="fond2" class="fondo"></div>
+<div id="mod2" class="modal">
+  <form>
+      <label class="titulo">Administrador: Bajas </label>
+      <label class="lbl_clave">Ingrese la clave:</label>
+      <input type="text" placeholder="Clave" class="txt" required/> 
+      <input type="submit" value="Buscar" class="btn_buscar" >
+      <input type="button" value="x" onclick = "b('fond2','mod2')" class="x"/>
+   </form>
+</div>
+<div id="fond3" class="fondo"></div>
+<div id="mod3" class="modal">
+  <form>
+      <label class="titulo">Vendedores: Cambios </label>
+      <label class="lbl_clave">Ingrese la clave:</label>
+      <input type="text" placeholder="Clave" class="txt" required/> 
+      <a href = 'cambios_vend.html'><input type="submit" value="Buscar" class="btn_buscar"></a>
+      <input type="button" value="x" onclick = "b('fond3','mod3')" class="x"/>
+   </form>
+</div>
+<div id="fond4" class="fondo"></div>
+<div id="mod4" class="modal">
+  <form>
+      <label class="titulo">Vendedores: bajas</label>
+      <label class="lbl_clave">Ingrese la clave:</label>
+      <input type="text" placeholder="Clave" class="txt" required /> 
+      <input type="submit" value="Buscar" class="btn_buscar" >
+      <input type="button" value="x" onclick = "b('fond4','mod4')" class="x"/>
+   </form>
+</div>
+<div id="fond5"class="fondo"></div>
+<div id="mod5"class="modal1">
+  <form>
+      <label class="titulo">Clientes: Consultar</label>
+      <br>
+      <input type="radio" name="con_clientes" class="radio"><label class="con_cli">Por turno</label>
+      <br>
+      <input type="radio" name="con_clientes" class="radio"> <label class="con_cli">Por vendedor</label>
+      <input type="submit" value="Aceptar" class="aceptar" >
+      <input type="button" value="x" onclick = "b('fond5','mod5')" class="xx"/>
+   </form>
+</div>
+<div id="fond6"class="fondo"></div>
+<div id="mod6"class="modal1">
+  <form>
+      <label class="titulo">Productos: Consultar</label>
+      <br>
+      <input type="radio" name="con_prod" class="radio"><label class="con_cli">Por marca</label>
+      <br>
+      <input type="radio" name="con_prod" class="radio"> <label class="con_cli">Por proveedor</label>
+      <input type="submit" value="Aceptar" class="aceptar" >
+      <input type="button" value="x" onclick = "b('fond6','mod6')" class="xx"/>
+   </form>
+</div>
+
+<INPUT TYPE="button" id= "btn_menu" VALUE="<" onClick="ver('menu')"> 
+
+</body>
+</html>
+

@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+ <head>
+ <link href="stylo.css" type="text/css" rel="stylesheet">
+
+       <script language="JavaScript" type="text/JavaScript">
+
+      function verif(form1)
+      {     
+       var cv = document.getElementById("cve").value;
+       var no = document.getElementById("nom").value;
+       var ap = document.getElementById("ap").value;
+       var am = document.getElementById("am").value;
+       var us = document.getElementById("usu").value;
+       var p1 = document.getElementById("pass1").value;
+       var p2 = document.getElementById("pass2").value;
+
+       if (p1.length == 0 || p2.length == 0 || cv.length==0||no.length==0||ap.length==0||am.length==0||us.length==0|| sex.selectedIndex==0) 
+        {
+         alert("quedan campos vacios");
+         return false;
+        }       
+        else
+        {
+        if (form1.password1.value!=form1.password2.value) 
+        { alert('las contraseñas no coinciden'); return false }
+        }
+       }
+
+      function X(F)
+      {
+        if (F.password1.value==F.password2.value) 
+        { return true }
+        else 
+        { alert('Las contraseñas no coinciden'); return false }
+      }
+
+      </script>
+
+ <meta charset="UTF-8" />
+ <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+ <title>Vendedores</title></head>
+</head>
+
+ <body>
+ <form  name="formu" align="center">
+    
+<div class="div2">
+<center>
+       <table>
+             <h2>Cambiar Vendedor</h2>
+       
+           <tr>
+            <td><label for="cve">CVE:</label></td>
+            <td><input id="cve" type="text" class="text_box" name="clave" placeholder="Clave" required /><br></td>
+           </tr>
+           <tr>
+            <td><label for="nombre">Nombre:</label></td>
+            <td><input id="nom" type="text"class="text_box"  name="nombre" placeholder="Nombre/s" required /><br></td>
+           </tr>
+       
+           <tr>
+            <td><label for="apaterno">Apellido Paterno:</label></td>
+            <td><input id="ap" type="text" class="text_box" name="Apa" placeholder="Apellido Paterno" required /><br></td>
+           </tr> 
+      
+           <tr>
+            <td><label for="amaterno">Apellido Materno:</label></td>
+            <td><input id="am" type="text" class="text_box" name="Ama" placeholder="Apellido materno" required /><br></td>
+           </tr>        
+
+           <tr>
+            <td><label for="sexo">Sexo:</label></td>
+            <td><select id="sex" name="sex">
+         
+              <option>Hombre</option>
+              <option>Mujer</option>
+            </select> <br></td>
+           </tr>
+        
+           <tr>
+            <td><label for="usuario">Usuario:</label></td>
+            <td><input id="usu" type="text" class="text_box" name="usuario" placeholder="Usuario" required /><br></td>
+           </tr>        
+
+           <tr>
+           <td><label for="Contraseña">Contraseña:</label></td>
+           <td><input id="pass1" type="password" class="text_box" name="password1" placeholder="Contraseña" required /><br></td>
+           </tr>
+        
+           <tr>
+            <td><label for="contraseñados">Confirmar Contraseña:</label><td>
+            <input id="pass2" type="password" class="text_box" name="password2" placeholder="Contraseña" onblur="return(X(this.form)); MM_validateForm()" required /><br></td>
+           </tr>
+      
+
+           <tr>
+            <td><label for="Foto">Foto:</label><br></td>
+            <td><input type="file" id="files" name="files[]"/></td>
+           </tr>
+
+</table>
+
+          <output id="list"><img src="img/facebook-default-no-profile-pic.jpg" width=150px height=170px></output><br>
+
+       <script>
+              function archivo(evt) {
+                  var files = evt.target.files;
+             
+                  for (var i = 0, f; f = files[i]; i++) {
+
+                    if (!f.type.match('image.*')) {
+                        continue;
+                    }
+             
+                    var reader = new FileReader();
+             
+                    reader.onload = (function(theFile) {
+                        return function(e) {
+
+                         document.getElementById("list").innerHTML = ['<img class="thumb" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+                        };
+                    })(f);
+             
+                    reader.readAsDataURL(f);
+                  }
+              }
+             
+              document.getElementById('files').addEventListener('change', archivo, false);
+      </script>
+          <br>
+          <input class="button" type="submit" value="Aceptar"onclick="return(X(this.form)); MM_validateForm()"></input>
+          <a href = 'panel.html'><button class="button" type="button">Cancelar</button></a>
+  </div>
+ </form>
+ </body>
+</html>
